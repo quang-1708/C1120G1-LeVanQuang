@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thử nghiệm</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt("hãy nhập chiều dài cùa hình"));
+    let b=parseInt(prompt("hãy nhập chiều cao của hình"))
+    for(let i=0;i<=b;i++){
+        for(let j=0;j<=a;j++){
+        if(i==0 || i==b) {
+            document.write("*");
+        }else if(j==0||j==a){
+            document.write("*");
+        } else {
+            document.write("&nbsp&nbsp")
+        }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
