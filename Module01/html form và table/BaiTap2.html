@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form lấy survey khách hàng</title>
+    <style>
+        .color {
+            font-weight: bold;
+        }
+        form div {
+            margin-bottom: 10px;
+        }
+       #a {
+           margin-left: 20px;
+       }
+    </style>
+</head>
+<body>
+
+ <form>
+     <div>
+         <label class="color">Market Research Survey</label><br>
+         <label class="color1">Please take a few moments to complete this satisfaction survey.</label>
+         <hr>
+     </div>
+     <div>
+         <label class="color">What is your age range ?</label><br>
+         <select style="height: 20px; width: 400px">
+             <option>18-24</option>
+             <option>25-34</option>
+             <option>35-50</option>
+             <option>50+</option>
+         </select>
+     </div>
+     <div>
+         <label class="color">What is your yearly income range ?</label><br>
+         <select style="width: 400px">
+             <option>$0-$25,000</option>
+             <option>$25,001-$50,000</option>
+             <option>$50,001-$100,000</option>
+             <option>$100,000+</option>
+         </select>
+     </div>
+     <div>
+         <label class="color">Gender Indetity</label><br>
+         <input type="radio" id="male" name="gender"/>Male <br>
+         <input type="radio" id="Female" name="gender"/>Female<br>
+         <input type="radio" id="Nonbinary" name="gender"/>Nonbinary<br>
+         <input type="radio" id="Other" name="gender" onclick="hien_ra()">Other<br>
+         <span id="d"></span>
+         <span id="e"></span>
+     </div>
+     <div>
+         <label class="color">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label><br>
+         <input type="checkbox" id="product1"/> Product 1 <br>
+         <input type="checkbox" id="product2"/> Product 2 <br>
+         <input type="checkbox" id="product3"/> Product 3 <br>
+     </div>
+     <div>
+         <label>How often would you use our new product?</label><br>
+         <input type="radio" name="radio"/> Daily <br>
+         <input type="radio" name="radio"/> Weekly <br>
+         <input type="radio" name="radio"/> Monthly
+     </div>
+ </form>
+
+ <script>
+     let k;
+     let e ="<input type=\"text\" id=\"a\" oninput=\"tang()\"><br>";
+     function tang() {
+         let b = document.getElementById("a").value;
+         if (b.length > 250){
+             b = " ";
+         }
+         k = " Currently Used: " + b.length+1 +"characters";
+         document.getElementById("e").innerText ="Maximum of 250 characters.       ";
+         document.getElementById("e").innerHTML += k;
+     }
+     function  hien_ra() {
+         document.getElementById("d").innerHTML = e;
+     }
+ </script>
+</body>
+</html>

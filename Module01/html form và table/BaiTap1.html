@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form đơn giản</title>
+    <style>
+        form div {
+            margin-bottom: 10px;
+            /*trên cách dưới 10px*/
+        }
+        .color {
+            font-weight: bold;
+            /*cho chữ đậm lên */
+            color: blue;
+        }
+        .color1 {
+            color: red;
+        }
+        #email {
+            margin-left: 34px;
+        }
+        #sport, #music, #reading {
+            margin-left: 20px;
+        }
+        #playgame {
+            margin-left: 16px;
+        }
+        #cinema {
+            margin-left: 9px;
+        }
+        #wed {
+            margin-left: 85px;
+        }
+        #button,#reset {
+            margin-left: 80px;
+        }
+        .sothich {
+            margin-left: 100px;
+            border: 1px;
+            width: 500px;
+
+        }
+        form {
+            width: 500px;
+            /*chiều cao của form*/
+            border: 1px solid lavender;
+            /*đường viền- màu đường viền*/
+            background: lavender;
+            margin: 40px 100px;
+            /*form dịch sang trái-trên*/
+            padding: 20px;
+            /*chữ cách đường viền*/
+        }
+        #reset,#button {
+            color: blue;
+            background: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div style="background: red">
+        <label class="sothich">SỞ THÍCH CỦA BẠN</label>
+    </div>
+    <div>
+        <label for="name" class="color">Họ Và Tên</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <label for="email" class="color">Email</label>
+        <input type="text" id="email">
+    </div>
+    <div>
+        <label class="color">Sở Thích</label>
+        <input type="checkbox" id="sport">
+        <label class="color1">Thể thao</label>
+        <input type="checkbox" id="music">
+        <label class="color1">Âm nhạc</label>
+        <input type="checkbox" id="reading">
+        <label class="color1">Đọc sách</label>
+    </div>
+    <div>
+        <input type="checkbox" id="wed">
+        <label class="color1">Lướt wed</label>
+        <input type="checkbox" id="playgame">
+        <label class="color1">Chơi game</label>
+        <input type="checkbox" id="cinema">
+        <label class="color1">Điện ảnh</label>
+    </div>
+    <div>
+        <input type="button" value="Gửi Thông Tin" id="button">
+        <input type="reset" value="Nhập Lại" id="reset">
+    </div>
+</form>
+</body>
+</html>

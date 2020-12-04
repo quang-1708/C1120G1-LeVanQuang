@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form đăng kí người dùng</title>
+    <style>
+        form div {
+            margin-bottom: 10px;
+        }
+        .color {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<form action= "BaiTap2.html" method= "GET" >
+<div>
+    <label class="color">Name:</label><br>
+    <input type="text" name="name"/>
+</div>
+    <div>
+        <label class="color">Email:</label><br>
+        <input type="text" name="email"/>
+    </div>
+    <div>
+        <label class="color">Phone:</label><br>
+        <input type="number" name="number">
+    </div>
+    <div>
+        <label class="color">Gender:</label><br>
+        <input type="radio" id="female" name="gender" checked> Nam
+        <input type="radio" id="male" name="gender"> Nữ
+    </div>
+    <div>
+        <input type="submit" id="submit" value="Đăng Kí">
+    </div>
+</form>
+<script>
+</script>
+</body>
+</html>

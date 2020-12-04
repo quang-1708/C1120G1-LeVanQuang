@@ -4,118 +4,118 @@
     <meta charset="UTF-8">
     <title>thử nghiệm 1</title>
     <style type="text/css">
-        td{
-            border:1px solid red;
+        td {
+            border: 1px solid red;
             /*đường viền của bảng,tiêu đề,ô*/
             padding: 5px
-        /*khoảng cách từ nội dung trong ô tới đường viền*/
+            /*khoảng cách từ nội dung trong ô tới đường viền*/
         }
-        table{
-            border:3px solid red;
+
+        .ket_qua {
+            border: 3px solid red;
             /*border-collapse:collapse;*/
             background-color: #f1f1c1;
             /*thay đổi nền cho bảng*/
         }
-        p {
-            text-align: left;
+        .a {
+            color: blue;
         }
+
     </style>
 </head>
 <body>
-
-<div>
-   <pre>                   THÔNG TIN CÁ NHÂN</pre>
+<pre>                   THÔNG TIN CÁ NHÂN</pre>
 <!--    thẻ pre in toàn bộ văn bảng kể cả dấu cách-->
-<table>
-    <tr>
-        <td>HỌ VÀ TÊN :</td>
-        <td>NGÀY-THÁNG-NĂM:</td>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" id="name">
-        </td>
-        <td colspan="3">
-            <input type="date" id="day">
-        </td>
-    </tr>
-    <tr>
-        <td>CHỨNG MINH NHÂN DÂN :</td>
-        <td>EMAIL:</td>
-    </tr>
-    <tr>
-        <td>
-            <input type="number" id="id">
-        </td>
-        <td>
-            <input type="text" id="email">
-        </td>
-    </tr>
-    <tr>
-        <td>ĐỊA CHỈ:</td>
-        <td>GIẢM GIÁ:</td>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" id="address">
-        </td>
-        <td>
-            <input tyle="number" id="sale">
-        </td>
-    </tr>
-    <tr>
-        <td>KHÁCH HÀNG:</td>
-        <td> DỊCH VỤ:</td>
-    </tr>
-    <tr>
-        <td><select id="customer">
-            <option>diamont</option>
-            <option>platinum</option>
-            <option>gold</option>
-            <option>silver</option>
-        </select>
-        </td>
-        <td><select id="server">
-            <option>villa</option>
-            <option>house</option>
-            <option>room</option>
-        </select>
-        </td>
-    </tr>
-    <tr>
+<div id="infor" style="float: left; border: solid 2px">
+    <table class="ket_qua">
+        <tr>
+            <td>HỌ VÀ TÊN :</td>
+            <td>NGÀY-THÁNG-NĂM:</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="name">
+            </td>
+            <td colspan="3">
+                <input type="date" id="day">
+            </td>
+        </tr>
+        <tr>
+            <td>CHỨNG MINH NHÂN DÂN :</td>
+            <td>EMAIL:</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="id">
+            </td>
+            <td>
+                <input type="text" id="email">
+            </td>
+        </tr>
+        <tr>
+            <td>ĐỊA CHỈ:</td>
+            <td>GIẢM GIÁ:</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="address">
+            </td>
+            <td>
+                <input tyle="number" id="sale">
+            </td>
+        </tr>
+        <tr>
+            <td>KHÁCH HÀNG:</td>
+            <td> DỊCH VỤ:</td>
+        </tr>
+        <tr>
+            <td><select id="customer">
+                <option>diamont</option>
+                <option>platinum</option>
+                <option>gold</option>
+                <option>silver</option>
+            </select>
+            </td>
+            <td><select id="server">
+                <option>villa</option>
+                <option>house</option>
+                <option>room</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
 
-        <td>SỐ LƯỢNG:</td>
-        <td>SỐ NGÀY:</td>
-    </tr>
-    <tr>
-        <td>
-            <input tyle="number" id="mount">
-        </td>
-        <td>
-            <input type="number" id="rentday">
-        </td>
-    </tr>
-    <tr>
+            <td>SỐ LƯỢNG:</td>
+            <td>SỐ NGÀY:</td>
+        </tr>
+        <tr>
+            <td>
+                <input tyle="number" id="mount">
+            </td>
+            <td>
+                <input type="number" id="rentday">
+            </td>
+        </tr>
+        <tr>
 
-        <td>KIỂU PHÒNG:</td>
-    </tr>
-    <tr>
-        <td><select id="typeroom">
-            <option>vip</option>
-            <option>business</option>
-            <option>normal</option>
-        </select></td>
-    </tr>
-    <tr>
-        <td>
-            <input type="button" onclick=send() value="gửi_đi">
-        </td>
-        <td>
-            <input type="reset"  value="nhập lại">
-        </td>
-    </tr>
-</table>
-
+            <td>KIỂU PHÒNG:</td>
+        </tr>
+        <tr>
+            <td><select id="typeroom">
+                <option>vip</option>
+                <option>business</option>
+                <option>normal</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" onclick="send()" value="gửi_đi">
+            </td>
+            <td>
+                <input type="reset" value="nhập lại">
+            </td>
+        </tr>
+    </table>
 </div>
 <script>
     function send() {
@@ -123,7 +123,7 @@
         let day_month_year = document.getElementById("day");
         let ID = document.getElementById("id");
         let EMAIL = document.getElementById("email");
-        let Address= document.getElementById("address");
+        let Address = document.getElementById("address");
         let Customer = document.getElementById("customer");
         let Server = document.getElementById("server")
         let Mount = document.getElementById("mount");
@@ -131,17 +131,30 @@
         let Rentday = document.getElementById("rentday");
         let Typeroom = document.getElementById("typeroom");
 
-        document.write("-KHÁCH HÀNG: " + name.value + "<br>");
-        document.write("-NGÀY THÁNG NĂM: " + day_month_year.value + "<br>");
-        document.write("-CMND: " + ID.value + "<br>");
-        document.write("-EMAIL: " + EMAIL.value + "<br>");
-        document.write("-ĐỊA CHỈ: " + Address.value +"<br>");
-        document.write("-KHÁCH HÀNG: " + Customer.value + "<br>");
-        document.write("-DỊCH VỤ: " + Server.value + "<br>");
-        document.write("-GIẢM GIÁ: " + Sale.value + "<br>")
-        document.write("-SỐ LƯỢNG: " + Mount.value + "<br>");
-        document.write("-SỐ NGÀY Ở: " + Rentday.value + "<br>");
-        document.write("-LOẠI PHÒNG: " + Typeroom.value + "<br>");
+        // document.write("-KHÁCH HÀNG: " + name.value + "<br>");
+        // document.write("-NGÀY THÁNG NĂM: " + day_month_year.value + "<br>");
+        // document.write("-CMND: " + ID.value + "<br>");
+        // document.write("-EMAIL: " + EMAIL.value + "<br>");
+        // document.write("-ĐỊA CHỈ: " + Address.value +"<br>");
+        // document.write("-KHÁCH HÀNG: " + Customer.value + "<br>");
+        // document.write("-DỊCH VỤ: " + Server.value + "<br>");
+        // document.write("-GIẢM GIÁ: " + Sale.value + "<br>")
+        // document.write("-SỐ LƯỢNG: " + Mount.value + "<br>");
+        // document.write("-SỐ NGÀY Ở: " + Rentday.value + "<br>");
+        // document.write("-LOẠI PHÒNG: " + Typeroom.value + "<br>");
+        infor ="<pre class='a'>                     THÔNG TIN CỦA BẠN:</pre>"
+            + "<table>" + "<tr>"+"<td>" + "Khách Hàng:" + name.value + "</td>"
+            + "<td>" + "Ngày Tháng Năm Sinh: " + day_month_year.value + "</td>" +"</tr>";
+        infor += "<tr>"+"<td>" + "Chứng Minh Nhân Dân: " + ID.value + "</td>"
+                       + "<td>" + "Email: " + EMAIL.value + "</td>"+"</tr>"
+        infor += "<tr>"+"<td>" + "Địa Chỉ: " + Address.value + "</td>"
+                       +"<td>" + "Loại Khách Hàng: " + Customer.value + "</td>"+"</tr>";
+        infor += "<tr>"+"<td>" + "Dịch Vụ: " + Server.value + "</td>"
+                       +"<td>" + "Giảm Giá: " + Sale.value + "</td>" +"</tr>";
+        infor += "<tr>"+"<td>" +  "Số Lượng: " + Mount.value + "</td>"
+                       +"<td>" + "Số Ngày Ở: " + Rentday.value + "</td>" +"</tr>";
+        infor += "<tr>"+"<td>" + "Loại Phòng: " + Typeroom.value + "</td>" +"</tr>"+ "</table>";
+        document.getElementById("infor").innerHTML = infor;
     }
 </script>
 </body>
