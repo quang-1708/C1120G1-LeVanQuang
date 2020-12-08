@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính Mở Rộng</title>
+    <style>
+        table {
+            background: #f1f1c1;
+            width: 500px;
+            height: 500px;
+            margin: 60px 100px;
+            text-align: center;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        #kq {
+            width: 480px;
+            height: 30px;
+        }
+
+        .mo_rong {
+            background: slategray;
+        }
+
+
+    </style>
+</head>
+<body>
+<table border="1" style="background: #f1f1c1">
+    <tr style="background: green ; color: orange">
+        <td>CASIO VN</td>
+        <th colspan="5">CACULATOR</th>
+        <td>fx-600VN</td>
+    </tr>
+    <tr>
+        <td colspan="7">
+            <input type="text" id="kq"/>
+        </td>
+    </tr>
+    <tr class="mo_rong">
+        <td>
+            <input type="button" id="Rad" value="Rad"/>
+        </td>
+        <td>
+            <input type="button" value="...">
+        </td>
+        <td>
+            <input type="button" id="giai_thua" value="!" onclick="set_num(this.value)"/>
+        </td>
+        <td>
+            <input type="button" id="ngoac_mo" value="(" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="ngoac_dong" value=")" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="phan_tram" value="%" onclick=phan_tram()>
+        </td>
+        <td>
+            <input type="button" id="AC" value="AC" onclick="xoa()">
+        </td>
+    </tr>
+    <tr>
+        <td class="mo_rong">
+            <input type="button" id="lnv" value="lnv"/>
+        </td>
+        <td class="mo_rong">
+            <input type="button" value="sin" id="sin" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="ln" value="ln"/>
+        </td>
+        <td>
+            <input type="button" id="7" value="7" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="8" value="8" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="9" value="9" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="chia" value="/" onclick="set_num(this.value)" class="a">
+        </td>
+    </tr>
+    <tr>
+        <td class="mo_rong">
+            <input type="button" id="pi" value="pi"/>
+        </td>
+        <td class="mo_rong">
+            <input type="button" value="cos" id="cos" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="log" value="log"/>
+        </td>
+        <td>
+            <input type="button" id="4" value="4" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="5" value="5" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="6" value="6" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="nhan" value="*" onclick="set_num(this.value)" class="a">
+        </td>
+    </tr>
+    <tr>
+        <td class="mo_rong">
+            <input type="button" id="e" value="e"/>
+        </td>
+        <td class="mo_rong">
+            <input type="button" value="tan" id="tan" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="can_bac_hai" value="√" onclick="set_num(this.value)"/>
+        </td>
+        <td>
+            <input type="button" id="1" value="1" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="2" value="2" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="3" value="3" onclick="set_num(this.value)">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="tru" value="-" onclick="set_num(this.value)" class="a">
+        </td>
+    </tr>
+    <tr>
+        <td class="mo_rong">
+            <input type="button" id="Ans" value="Ans"/>
+        </td>
+        <td class="mo_rong">
+            <input type="button" value="EXP" id="exp">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="luy_thua" value="^" onclick="set_num(this.value)"/>
+        </td>
+        <td>
+            <input type="button" id="0" value="0" onclick="set_num(this.value)">
+        </td>
+        <td>
+            <input type="button" id="cham" value="." onclick="set_num(this.value)">
+        </td>
+        <td style="background: royalblue">
+            <input type="button" id="bang" value="=" onclick="ket_qua()">
+        </td>
+        <td class="mo_rong">
+            <input type="button" id="cong" value="+" onclick="set_num(this.value)" class="a">
+        </td>
+    </tr>
+</table>
+<script>
+    let input = document.getElementById("kq");
+    function set_num(n){
+        let str=input.value;
+        if(str.charAt(str.length-1)==="/"||str.charAt(str.length-1)==="*"||str.charAt(str.length-1)==="+"||str.charAt(str.length-1)==="-"){
+            if (n==="/"||n==="*"||n==="+"||n==="-"){
+                alert(" not")
+            }else {
+                input.value += n;
+            }
+        }else {
+            input.value += n;
+        }
+
+    }
+    function ket_qua() {
+        input.value = eval(input.value)
+
+    }
+    function xoa() {
+        input.value = "";
+    }
+
+</script>
+</body>
+</html>

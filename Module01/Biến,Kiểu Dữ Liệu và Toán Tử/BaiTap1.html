@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>biến,kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<input type="button" onclick="bai_tap_1()" value="bài tập 1">
+<input type="button" onclick="bai_tap_2()" value="bài tập 2">
+<input type="button" onclick="bai_tap_3()" value="bài tập 3">
+<input type="button" onclick="bai_tap_4()" value="bài tập 4">
+<script>
+    function bai_tap_1() {
+        let sum;
+        let avg;
+        let a = parseInt(prompt("bạn hãy nhập điểm vật lí"));
+        let b = parseInt(prompt("bạn hãy nhập điểm hóa"));
+        let c = parseInt(prompt("bạn hãy nhập điểm sinh"));
+        sum = a + b + c;
+        avg = sum / 3;
+        alert("tổng điểm của bạn là: " + sum);
+        alert("điểm trung bình của bạn là: " + avg);
+    }
+</script>
+<script>
+    function bai_tap_2() {
+        let C = parseInt(prompt("hãy nhập độ C bạn cần"));
+        let F;
+        F = 9 * C / 5 + 32;
+        alert("độ F: " + F)
+    }
+</script>
+<script>
+    function bai_tap_3() {
+        let R = parseInt(prompt("hãy nhập bán kính"));
+        let S;
+        S = 3.14 * R * R;
+        alert("diện tích hình tròn là: " + S)
+    }
+</script>
+<script>
+    function bai_tap_4() {
+        let R = parseInt(prompt("hãy nhập bán kinh"));
+        let C;
+        C = 4 * 3.14 * R;
+        alert("chu vi hình tròn: " + C)
+    }
+</script>
+</body>
+</html>
