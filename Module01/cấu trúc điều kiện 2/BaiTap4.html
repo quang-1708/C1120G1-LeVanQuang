@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<input type="button" onclick="baitap1()" value="bài tập 1">
+<input type="button" onclick="baitap2()" value="bài tập 2">
+<input type="button" onclick="baitap3()" value="bài tập 3">
+<input type="button" onclick="baitap4()" value="bài tập 4">
+<input type="button" onclick="baitap5()" value="bài tập 5">
+<input type="button" onclick="baitap6()" value="bài tập 6">
+<input type="button" onclick="baitap7()" value="bài tập 7">
+<script>
+    function baitap1() {
+        let a = parseInt(prompt("nhập số đầu tiên"));
+        let b = parseInt(prompt("nhập số thứ 2"));
+        if (a % b === 0) {
+            alert(a + " chia hết cho b " + b)
+        } else {
+            alert(a + " không chia hết cho b " + b)
+        }
+    }
+
+    function baitap2() {
+        let old = parseInt(prompt("hãy nhập tuổi cần xét"));
+        if (old >= 16) {
+            alert("tuổi của bạn đủ để vào lớp 10")
+        } else {
+            alert("tuổi của bạn không đủ vào lớp 10")
+        }
+    }
+
+    function baitap3() {
+        let a = parseInt(prompt("nhập số cần kiểm tra"));
+        if (a > 0) {
+            alert(a + " lớn hơn 0")
+        } else {
+            alert(a + " nhỏ hơn 0")
+        }
+    }
+
+    function baitap4() {
+        let a = parseInt(prompt("nhập số thứ 1"));
+        let b = parseInt(prompt("nhập số thứ 2"));
+        let c = parseInt(prompt("nhập số thứ 3"));
+        if (a > b) {
+            if (a > c) {
+                alert(a + " là số lớn nhấp")
+            } else {
+                alert(c + " là số lớn nhất")
+            }
+        } else if (b > c) {
+            alert(b + " là số lớn nhất")
+        }
+    }
+
+    function baitap5() {
+        let a = parseInt(prompt("nhập điểm bài kiểm tra"));
+        let b = parseInt(prompt("nhập điểm bài kiểm giữa kì"));
+        let c = parseInt(prompt("nhập điểm bài kiểm tra cuối kì"));
+        let sum = (a + b * 2 + c * 3) / 6;
+        if (sum >= 8) {
+            alert("bạn đạt loại tốt")
+        } else if (sum >= 6.5) {
+            alert("bạn đạt loại khóa")
+        } else if (sum >= 5) {
+            alert("bạn đạt loại trung bình")
+        } else {
+            alert("bạn đạt loại yếu")
+        }
+    }
+    function baitap6() {
+
+    }
+</script>
+</body>
+</html>

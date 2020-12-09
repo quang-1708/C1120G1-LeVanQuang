@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+<input type="button" onclick="baitap1()" value="bài tập 1">
+<input type="button" onclick="baitap2()" value="bài tập 2">
+<input type="button" onclick="baitap3()" value="bài tập 3">
+<input type="button" onclick="baitap4()" value="bài tập 4">
+<input type="button" onclick="baitap5()" value="bài tập 5">
+<input type="button" onclick="baitap6()" value="bài tập 6">
+<input type="button" onclick="baitap7()" value="bài tập 7">
+<input type="button" onclick="baitap8()" value="bài tập 8">
+<input type="button" onclick="baitap9()" value="bài tập 9">
+<input type="button" onclick="baitap10()" value="bài tập 10">
+<input type="button" onclick="baitap11()" value="bài tập 11">
+<input type="button" onclick="baitap12()" value="bài tập 12">
+<script>
+    function baitap1() {
+        let C = parseInt(prompt("bạn hãy nhập nhiệt độ C"));
+        let F;
+        F = C * 9 / 5 + 32;
+        alert("độ F " + F)
+    }
+
+    function baitap2() {
+        let m = parseInt(prompt("bạn hãy nhập đồ dài theo mét"));
+        let ft;
+        ft = m * 3.2808;
+        alert(ft)
+
+    }
+
+    function baitap3() {
+        let a = parseInt(prompt("bạn hãy nhập độ dài cạnh của hình vuông"));
+        let S;
+        S = a * a;
+        alert(S)
+    }
+
+    function baitap4() {
+        let a = parseInt(prompt("nhập chiều dài"));
+        let b = parseInt(prompt("nhập chiều rộng"));
+        let S;
+        S = (a + b) * 2;
+        alert(S)
+    }
+
+    function baitap5() {
+        let a = parseInt(prompt("bạn hãy nhập cạnh thứ nhất của tam gác vuông"));
+        let b = parseInt(prompt("bạn hãy nhập cạnh thứ hai của tam gác vuông"));
+        let S;
+        S = 1 / 2 * a * b;
+        alert(" diện tích tam giác là: " + S)
+    }
+</script>
+</body>
+</html>

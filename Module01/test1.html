@@ -17,6 +17,7 @@
             background-color: #f1f1c1;
             /*thay đổi nền cho bảng*/
         }
+
         .a {
             color: blue;
         }
@@ -125,7 +126,7 @@
         let EMAIL = document.getElementById("email");
         let Address = document.getElementById("address");
         let Customer = document.getElementById("customer");
-        let Server = document.getElementById("server")
+        let Server = document.getElementById("server");
         let Mount = document.getElementById("mount");
         let Sale = document.getElementById("sale");
         let Rentday = document.getElementById("rentday");
@@ -135,25 +136,26 @@
         // document.write("-NGÀY THÁNG NĂM: " + day_month_year.value + "<br>");
         // document.write("-CMND: " + ID.value + "<br>");
         // document.write("-EMAIL: " + EMAIL.value + "<br>");
-        // document.write("-ĐỊA CHỈ: " + Address.value +"<br>");
+        // document.write("-ĐỊA CHỈ: " + Address.value + "<br>");
         // document.write("-KHÁCH HÀNG: " + Customer.value + "<br>");
         // document.write("-DỊCH VỤ: " + Server.value + "<br>");
         // document.write("-GIẢM GIÁ: " + Sale.value + "<br>")
         // document.write("-SỐ LƯỢNG: " + Mount.value + "<br>");
         // document.write("-SỐ NGÀY Ở: " + Rentday.value + "<br>");
         // document.write("-LOẠI PHÒNG: " + Typeroom.value + "<br>");
-        infor ="<pre class='a'>                     THÔNG TIN CỦA BẠN:</pre>"
-            + "<table style='background: antiquewhite'>" + "<tr>"+"<td>" + "Khách Hàng:" + name.value + "</td>"
-            + "<td>" + "Ngày Tháng Năm Sinh: " + day_month_year.value + "</td>" +"</tr>";
-        infor += "<tr>"+"<td>" + "Chứng Minh Nhân Dân: " + ID.value + "</td>"
-                       + "<td>" + "Email: " + EMAIL.value + "</td>"+"</tr>"
-        infor += "<tr>"+"<td>" + "Địa Chỉ: " + Address.value + "</td>"
-                       +"<td>" + "Loại Khách Hàng: " + Customer.value + "</td>"+"</tr>";
-        infor += "<tr>"+"<td>" + "Dịch Vụ: " + Server.value + "</td>"
-                       +"<td>" + "Giảm Giá: " + Sale.value + "</td>" +"</tr>";
-        infor += "<tr>"+"<td>" +  "Số Lượng: " + Mount.value + "</td>"
-                       +"<td>" + "Số Ngày Ở: " + Rentday.value + "</td>" +"</tr>";
-        infor += "<tr>"+"<td>" + "Loại Phòng: " + Typeroom.value + "</td>" +"</tr>"+ "</table>";
+        // }
+        infor = "<pre class='a'>                     THÔNG TIN CỦA BẠN:</pre>"
+            + "<table style='background: antiquewhite'>" + "<tr>" + "<td>" + "Khách Hàng:" + name.value + "</td>"
+            + "<td>" + "Ngày Tháng Năm Sinh: " + day_month_year.value + "</td>" + "</tr>";
+        infor += "<tr>" + "<td>" + "Chứng Minh Nhân Dân: " + ID.value + "</td>"
+            + "<td>" + "Email: " + EMAIL.value + "</td>" + "</tr>"
+        infor += "<tr>" + "<td>" + "Địa Chỉ: " + Address.value + "</td>"
+            + "<td>" + "Loại Khách Hàng: " + Customer.value + "</td>" + "</tr>";
+        infor += "<tr>" + "<td>" + "Dịch Vụ: " + Server.value + "</td>"
+            + "<td>" + "Giảm Giá: " + Sale.value + "</td>" + "</tr>";
+        infor += "<tr>" + "<td>" + "Số Lượng: " + Mount.value + "</td>"
+            + "<td>" + "Số Ngày Ở: " + Rentday.value + "</td>" + "</tr>";
+        infor += "<tr>" + "<td>" + "Loại Phòng: " + Typeroom.value + "</td>" + "</tr>" + "</table>";
         document.getElementById("infor").innerHTML = infor;
     }
 </script>
