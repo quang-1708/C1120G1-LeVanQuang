@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bảng cửu chương</title>
+</head>
+<body>
+<script>
+    let count;
+    count = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+    for(let i=2;i<=9;i++){
+        count += "<tr>";
+        for(let j=1;j<=9;j++){
+            count += "<td>" + i+ "x" + j + "=" +i*j + "</td>"
+        }
+        count +="</tr>"
+    }
+    count +="</table>";
+    document.write(count)
+</script>
+</body>
+</html>

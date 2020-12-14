@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<input type="button" onclick="baitap1()" value="bài tập 1"/>
+<input type="button" onclick="baitap2()" value="bài tập 2"/>
+<input type="button" onclick="baitap3()" value="bài tập 3"/>
+<input type="button" onclick="baitap4()" value="bài tập 4"/>
+<input type="button" onclick="baitap5()" value="bài tập 5"/>
+<input type="button" onclick="baitap6()" value="bài tập 6"/>
+<input type="button" onclick="baitap7()" value="bài tập 7"/>
+<input type="button" onclick="baitap8()" value="bài tập 8"/>
+<script>
+    function baitap1() {
+        for (let i = 1; i < 100; i++) {
+            if (i === 99) {
+                alert("bạn đã hoàn thành")
+            }
+        }
+    }
+
+    function baitap2() {
+        let flag = true;
+        do {
+            let tempt = parseInt(prompt("hãy nhập nhiệt độ"));
+            if (tempt > 100) {
+                alert("bạn hãy giảm nhiệt độ")
+            } else if (tempt < 20) {
+                alert("bạn hãy tăng nhiệt độ")
+            } else {
+                alert("nhiệt độ OK");
+                flag = false
+            }
+
+        } while (flag)
+
+    }
+
+    function baitap3() {
+        let F0 = 0;
+        let F1 = 1;
+        let Fn
+        document.write(F0 + " ");
+        document.write(F1 + " ")
+        for (let Fi = 0; Fi < 18; Fi++) {
+            Fn = F0 + F1;
+            document.write(Fn + " ");
+            F0 = F1;
+            F1 = Fn;
+
+        }
+    }
+
+    function baitap4() {
+        let F0 = 0;
+        let F1 = 1;
+        let Fn;
+        for (let Fi = 0; Fi < 18; Fi++) {
+            Fn = F0 + F1;
+            if (Fn % 5 === 0) {
+                document.write(Fn);
+                break
+            }
+            F0 = F1;
+            F1 = Fn
+
+        }
+
+    }
+
+    function baitap5() {
+        let F0 = 0;
+        let F1 = 1;
+        let Fn;
+        let sum = F1 + F0;
+        for (let Fi = 0; Fi < 18; Fi++) {
+            Fn = F0 + F1;
+            sum += Fn;
+            F0 = F1;
+            F1 = Fn;
+
+        }
+        document.write(sum)
+    }
+
+    function baitap6() {
+        let a = 7;
+        let sum = 0;
+        for (let i = 0; i <= 29;) {
+            while (a % 7 === 0) {
+                sum += a;
+                i++;
+                break;
+            }
+            a++
+        }
+        document.write(sum)
+    }
+
+
+    function baitap7() {
+        // for (i = 1; 1 <= 100; i++) {
+        //     document.write(i)
+
+        // }
+        let flag = true;
+        do {
+            let n = parseInt(prompt("hãy nhập số cần kiểm tra"));
+            if (n > 1 && n < 100) {
+                if (n % 3 === 0 && n % 5 === 0) {
+                    alert("FizzBuzz");
+                } else if (n % 5 === 0) {
+                    alert("Buzz")
+                } else if (n % 3 === 0) {
+                    alert("Fizz")
+                }
+            } else {
+                flag=false
+            }
+        } while (flag)
+    }
+</script>
+
+</body>
+</html>

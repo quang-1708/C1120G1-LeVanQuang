@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập vòng lặp 2</title>
+</head>
+<body>
+<input type="button" onclick="baitap1()" value="bài tập 1"/>
+<input type="button" onclick="baitap2()" value="bài tập 2"/>
+<input type="button" onclick="baitap3()" value="bài tập 3"/>
+<input type="button" onclick="baitap4()" value="bài tập 4"/>
+<input type="button" onclick="baitap5()" value="bài tập 5"/>
+<script>
+    function baitap3() {
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write("<b style='font-size: larger'>"+ "*" +"</b>");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j >= i; j--) {
+                document.write("<b style='font-size: larger'>"+ "*" +"</b>");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j >= i; j--) {
+                document.write("&nbsp&nbsp");
+            }
+            for (let z = 0; z <= i; z++) {
+                document.write("<b style='font-size: larger'>"+ "*" +"</b>");
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write("&nbsp&nbsp");
+            }
+            for (let z = 4; z >= i; z--) {
+                document.write("<b style='font-size: larger'>"+ "*" +"</b>");
+            }
+            document.write("<br>");
+        }
+
+    }
+
+    function baitap4() {
+        let a=parseInt(prompt("hãy nhập chiều cao"));
+        let b=parseInt(prompt("hãy nhập chiều dài"));
+        for (let i = 0; i <= a; i++) {
+            for (let j = 0; j <= b; j++) {
+                if (i === 0 || i === a) {
+                    document.write("<b>"+ "*" +"</b>");
+                }else if (j === 0 || j === b) {
+                    document.write("<b>"+ "*" +"</b>");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    }
+    function baitap5() {
+let num=parseInt(prompt("nhập số tiền bạn muốn gửi"));
+let n =parseInt(prompt("nhập số tháng bạn muốn gửi"));
+let a =parseInt(prompt("lãi suất ngân hàng"));
+        for(let i=1;i<=n;i++){
+            num = num+ num*a/100;
+            document.write(num + " ")
+        }
+    }
+</script>
+</body>
+</html>

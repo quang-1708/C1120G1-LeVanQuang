@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hiển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+    let num = 2;
+    let count;
+    let i;
+    for (count = 0; count < 20;) {
+        for (i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                break;
+            }
+        }
+        if (i > Math.sqrt(num)) {
+            document.write(num + " ");
+            count++;
+        }
+        num++
+    }
+</script>
+</body>
+</html>
