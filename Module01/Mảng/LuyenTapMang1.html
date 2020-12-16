@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập với mảng 1</title>
+</head>
+<body>
+<input type="button" onclick="bai_tap_1()" value="bài tập 1"/>
+<input type="button" onclick="bai_tap_2()" value="bài tập 2"/>
+<input type="button" onclick="bai_tap_3()" value="bài tập 3"/>
+<input type="button" onclick="bai_tap_4()" value="bài tập 4"/>
+<input type="button" onclick="bai_tap_5()" value="bài tập 5"/>
+<input type="button" onclick="bai_tap_6()" value="bài tập 6"/>
+<input type="button" onclick="bai_tap_7()" value="bài tập 7"/>
+<input type="button" onclick="bai_tap_8()" value="bài tập 8"/>
+<input type="button" onclick="bai_tap_9()" value="bài tập 9"/>
+<script>
+    function bai_tap_1() {
+        let arr = [];
+        let count = 0;
+        for (let i = 0; i < 10; i++) {
+            arr[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] > 0) {
+                count++
+            }
+        }
+        document.write(count)
+    }
+
+    function bai_tap_3() {
+        let arr = [];
+        let avg;
+        let sum = 0;
+        let num = prompt("nhập số phần tử của mảng");
+        for (let i = 0; i < num; i++) {
+            arr[i] = parseInt(prompt("nhập phần tử thứ: " + (i + 1)));
+        }
+        let max = arr[0];
+        for (let j = 0; j < arr.length; j++) {
+            if (max < arr[j]) {
+                max = arr[j];
+            }
+            sum = sum + arr[j];
+        }
+        avg = sum / arr.length;
+        document.write("giá trị lớn nhất là: " + max + "<br>");
+        document.write("giá trị trung bình của mảng là: " + avg);
+    }
+
+    function bai_tap_4() {
+        let arr = [];
+        let num = prompt("nhập số phần tử của mảng");
+        for (let i = 0; i < num; i++) {
+            arr[i] = parseInt(prompt("nhập phần tử thứ: " + (i + 1)));
+        }
+        let first = 0;
+        let last = arr.length - 1;
+        let temp;
+        while (first < last) {
+            temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--
+        }
+        document.write(arr)
+    }
+
+    function bai_tap_2() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        let max = arr[0];
+        for (let j = 0; j < arr.length; j++) {
+            if (max < arr[j]) {
+                max = arr[j]
+            }
+        }
+        for (let z = 0; z < arr.length; z++) {
+            if (arr[z] === max) {
+                document.write("vị trí giá trị lớn nhất là: " + z + "<br>")
+            }
+        }
+
+        document.write("giá trị lớn nhất là: " + max);
+    }
+
+    function bai_tap_6() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        let number = parseInt(prompt("hãy nhập số nguyên cần kiểm tra"));
+        let flag = false;
+        for (let j = 0; j < arr.length; j++) {
+            if (number === arr[j]) {
+                alert(number + " is in the array");
+                flag = true
+            }
+        }
+        if (!flag) {
+            alert(number + " is not in the array")
+        }
+    }
+
+    function bai_tap_7() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        let a;
+        let array = [];
+        let number = parseInt(prompt("hãy nhập số nguyên cần kiểm tra"));
+        for (let j = 0; j < arr.length; j++) {
+            if (number === arr[j]) {
+                alert(number + " is in the array");
+                a = j
+            }
+        }
+        arr.splice(a, 1);
+        document.write(arr)
+    }
+
+    function bai_tap_8() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        arr.sort(function (a, b) {
+            return a - b
+        });
+        arr.reverse();
+        document.write(arr);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập 2</title>
+</head>
+<body>
+<input type="button" onclick="bai_tap_1()" value="bài tập 1"/>
+<input type="button" onclick="bai_tap_2()" value="bài tập 2"/>
+<input type="button" onclick="bai_tap_3()" value="bài tập 3"/>
+<input type="button" onclick="bai_tap_4()" value="bài tập 4"/>
+<input type="button" onclick="bai_tap_5()" value="bài tập 5"/>
+<input type="button" onclick="bai_tap_6()" value="bài tập 6"/>
+<script>
+    function bai_tap_2() {
+        let arr = [];
+        let str = "";
+        for (let i = 0; i < 6; i++) {
+            arr[i] = prompt("hãy nhập phần tử thứ: " + (i + 1))
+        }
+        console.log(arr);
+        arr.reverse();
+        for (let i = 0; i < arr.length; i++) {
+            str += arr[i]
+        }
+        console.log(str)
+    }
+
+    function bai_tap_3() {
+        let arr = [];
+        for (let i = 0; i < 6; i++) {
+            arr[i] = prompt("hãy nhập phần tử thứ: " + (i + 1))
+        }
+        let count = 0;
+        // document.write(arr.length);
+        for (let j = 0; j < arr.length; j++) {
+            if(arr[j] * 0 === 0){
+                count++;
+            }
+        }
+        document.writeln(count);
+
+    }
+</script>
+</body>
+</html>

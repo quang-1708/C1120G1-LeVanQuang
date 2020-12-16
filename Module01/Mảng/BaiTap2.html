@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<div>
+
+    <input type="text" id="tu_dien"/>
+    <select id="loai_1">
+        <option>English</option>
+        <option>Vietnamese</option>
+    </select>
+    <select id="loai_2">
+        <option>Vietnamese</option>
+        <option>English</option>
+    </select>
+    <input type="button" onclick="button()" value="dịch">
+</div>
+<br> <br>
+<div>
+    <table border="1" cellspacing="0" cellpadding="0" style="width: 170px ; height: 30px; text-align: center">
+        <tr>
+            <td id="dich"></td>
+        </tr>
+    </table>
+    <!--<p id="dich"></p>-->
+</div>
+<script>
+    function button() {
+        let english = ["i", "thanks", "you", "sorry", "bye", "name", "year", "old", "gender"];
+        let vietnamese = ["Tôi", "cảm ơn", "bạn", "xin lỗi", "tạm biệt", "tên", "năm", "tuổi", "giới tính"];
+        let a = document.getElementById("tu_dien").value;
+        let b = document.getElementById("loai_1").value;
+        let c = document.getElementById("loai_2").value;
+        if (b === "English" && c === "Vietnamese") {
+            for (let i = 0; i < english.length; i++) {
+                if (a === english[i]) {
+                    english[i] = vietnamese[i];
+                    document.getElementById("dich").innerHTML = english[i]
+                }
+            }
+        }
+        else
+            if (b === "Vietnamese" && c === "English") {
+            for (let j = 0; j < vietnamese.length; j++) {
+                if (a === vietnamese[j]) {
+                    vietnamese[j] = english[j];
+                    document.getElementById("dich").innerHTML = vietnamese[j]
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let str = 'The Quick Brown Fox';
+    let chuoi = [];
+    for (let i = 0; i < str.length; i++) {
+        if (UPPER.indexOf(str[i]) !== -1) {
+            chuoi.push(str[i].toLowerCase());
+        } else if (LOWER.indexOf(str[i] !== -1)) {
+            chuoi.push(str[i].toUpperCase());
+        } else {
+            chuoi.push(str [i]);
+        }
+
+    }
+    document.write(chuoi.join(''));
+    </script>
+    </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let num = parseInt(prompt("hãy nhập số phần tử cho mảng"));
+    for (let i = 0; i < num; i++) {
+        arr[i] = prompt("hãy nhập phần tử thứ: " + (i+1));
+    }
+    let first = 0;
+    let temp;
+    let last = arr.length - 1;
+    while (first < last) {
+            temp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = temp;
+            first++;
+            last--
+        }
+        document.write(arr);
+</script>
+</body>
+</html>

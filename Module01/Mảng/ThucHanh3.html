@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let number = prompt("hãy nhập số phần tử của mảng");
+    for(let i=0;i< number;i++) {
+        arr[i] = prompt("hãy nhập phần tử thứ: "+ (i+1))
+    }
+    let num =prompt("nhập giá trị cần kiểm tra");
+        for(let j=0;j<arr.length;j++){
+            if(num===arr[j]){
+                alert(" giá trị cần tìm: " + arr[j] + " index: " + j)
+            }
+    }
+</script>
+</body>
+</html>
