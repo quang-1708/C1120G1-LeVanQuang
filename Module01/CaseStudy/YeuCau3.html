@@ -86,7 +86,6 @@
         let tempName = " ";
         let input = document.getElementById("name").value;
         let inputName = input.trim().toLowerCase();
-        console.log(inputName);
         for (let i = 0; i < inputName.length; i++) {
             if (inputName.charAt(i) === " " && inputName.charAt(i + 1) === " ") {
                 continue;
@@ -126,8 +125,6 @@
         }
     }
 
-    function CheckADD() {
-    }
 
     function CheckID() {
         let a = document.getElementById('cmnd').value;

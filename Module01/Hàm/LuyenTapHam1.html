@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập hàm 1</title>
+</head>
+<body>
+<input type="button" onclick="bai_tap_1()" value="bài tập 1"/>
+<input type="button" onclick="bai_tap_2()" value="bài tập 2"/>
+<input type="button" onclick="bai_tap_3()" value="bài tập 3"/>
+<input type="button" onclick="bai_tap_4()" value="bài tập 4"/>
+<input type="button" onclick="bai_tap_5()" value="bài tập 5"/>
+<script>
+    function bai_tap_1() {
+        function alertMessage(string) {
+            alert(string);
+        }
+
+        alertMessage("Xin Chao")
+    }
+
+    function bai_tap_3() {
+        let sum;
+
+        function number(a, b) {
+            if (a > b) {
+                alert(a + " lớn hơn " + b)
+            } else {
+                sum = a + b;
+                alert(sum)
+            }
+        }
+
+        let input = parseInt(prompt("hãy nhập số thứ 1"));
+        let input1 = parseInt(prompt("hãy nhập số thứ 2"));
+        number(input, input1);
+    }
+
+    function bai_tap_4() {
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            alert(result);
+            return result;
+        }
+
+        result = 0;
+        result = addNumbers();
+        alert(result);
+    }
+
+    function bai_tap_5() {
+        let arr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arrary = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        function checkStar(string) {
+            let i = arr.indexOf(string);
+            if (i !== -1) {
+                return arrary[i];
+            } else {
+                return 'không có ngôi sao này này'
+            }
+        }
+        let input = prompt("hãy nhập tên ngôi sao");
+        alert(checkStar(input));
+
+    }
+</script>
+</body>
+</html>

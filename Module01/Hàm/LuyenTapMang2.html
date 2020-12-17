@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyện tập mảng 2</title>
+</head>
+<body>
+<input type="button" onclick="bai_tap_1()" value="bài tập 1"/>
+<input type="button" onclick="bai_tap_2()" value="bài tập 2"/>
+<input type="button" onclick="bai_tap_3()" value="bài tập 3"/>
+<input type="button" onclick="bai_tap_4()" value="bài tập 4"/>
+<input type="button" onclick="bai_tap_5()" value="bài tập 5"/>
+<input type="button" onclick="bai_tap_6()" value="bài tập 6"/>
+<input type="button" onclick="bai_tap_7()" value="bài tập 7"/>
+<input type="button" onclick="bai_tap_8()" value="bài tập 8"/>
+<input type="button" onclick="bai_tap_9()" value="bài tập 9"/>
+<script>
+    function bai_tap_1() {
+        let a;
+
+        function binhphuong(num) {
+            a = num * num
+            alert("bình phương của " + num + " là: " + a)
+        }
+
+        binhphuong(parseInt(prompt("hãy nhập số")))
+    }
+
+    function bai_tap_2() {
+        let Area;
+        let C
+        function area(num) {
+            Area = num * num * 3.14;
+            C = 4 * 3.14 * num;
+            alert("diện tích hình tròn là: " + Area);
+            alert("chu vi hình tròn là: " + C);
+        }
+
+        area(parseInt(prompt("hãy nhập bán kính đường tròn")))
+    }
+
+    function bai_tap_3() {
+        let num = 1
+
+        function giai_thua(number) {
+            for (let i = 1; i <= number; i++) {
+                num = num * i;
+            }
+            alert("giai thừa của " + number + " là: " + num)
+        }
+
+        giai_thua(parseInt(prompt("hãy nhập số cần tính")))
+    }
+
+    function bai_tap_4() {
+        let a
+
+        function checkNumber(num) {
+            a = num * 0
+            if (a === 0) {
+                alert("bạn vừa nhập là số")
+            } else if (a !== 0) {
+                alert("bạn vừa nhập không phải là số")
+            }
+        }
+
+        checkNumber(parseInt(prompt("hãy nhập input")))
+    }
+
+    function bai_tap_5() {
+        function kiem_tra(a, b, c) {
+            if (a > b) {
+                if(a> c){
+                    alert(a+ " là số lớn nhất")
+                } else {
+                    alert(c +" là số lớn nhất")
+                }
+
+            }else if(b> c){
+                alert(b + " là số lớn nhất")
+            }
+
+        }
+        let input =parseInt(prompt("nhập số thứ nhất"));
+        let input1 =parseInt(prompt("nhập số thứ 2"));
+        let input2 =parseInt(prompt("nhập số thứ 3"));
+        kiem_tra(input, input1, input2)
+    }
+
+    function bai_tap_6() {
+        function checkNum(num) {
+            let b = parseInt(num);
+            if (b - num === 0) {
+                alert("số bạn vừa nhập là số nguyên dương")
+            } else {
+                alert("số bạn nhập không phải là số nguyên dương")
+            }
+        }
+
+        checkNum(prompt("hãy nhập số cần kiểm tra"))
+    }
+
+    function bai_tap_7() {
+        function hoan_doi(a, b) {
+            let temp = a;
+            a = b;
+            b = temp;
+            alert(a + " " + b)
+
+        }
+
+        let input = parseInt(prompt("hãy nhập số thứ nhất"));
+        let input1 = parseInt(prompt("hãy nhập số thứ 2"));
+        hoan_doi(input, input1)
+    }
+
+    function bai_tap_8() {
+        function array(arr) {
+            arr.reverse();
+            alert(arr)
+        }
+
+        let arr1 = [];
+        let num = parseInt(prompt("hãy nhập số lượng của mảng"));
+        for (let i = 0; i < num; i++) {
+            arr1[i] = parseInt(prompt("hãy nhập phần tử thứ: " + (i + 1)))
+        }
+        array(arr1)
+    }
+
+    function bai_tap_9() {
+        let arr1 = [];
+        let num = (prompt("hãy nhập số lượng của mảng"));
+        for (let i = 0; i < num; i++) {
+            arr1[i] = (prompt("hãy nhập phần tử thứ: " + (i + 1)));
+        }
+        console.log(arr1)
+
+
+        function checkString(string) {
+            let count = 0;
+            for (let j = 0; j< arr1.length; j++) {
+                if (arr1[j]== string) {
+                    alert(string +" có nằm trong mảng");
+                    count++;
+                } else if(count===0){
+                    alert("-1");
+                    break
+                }
+            }document.write(count)
+        }
+        checkString(prompt("hãy nhập kí tự cần kiểm tra"))
+    }
+</script>
+</body>
+</html>
