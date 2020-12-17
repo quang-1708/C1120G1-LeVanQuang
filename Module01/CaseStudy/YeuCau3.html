@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 3</title>
+</head>
+<body>
+<h2>Nhập dữ liệu</h2>
+
+<div style="border:1px solid #ddd; width: 50% ; height: 200px; background: burlywood">
+    <legen><b>YOUR BOOKING</b></legen>
+    <table>
+        <tr>
+            <th>Name:</th>
+            <td>
+                <input type="text" id="name">
+            </td>
+            <th>Số CMND:</th>
+            <td>
+                <input type="number" id="cmnd" onfocusout="CheckID()">
+            </td>
+        </tr>
+        <tr>
+            <th>Date of Birth:</th>
+            <td>
+                <input type="date" id="birth">
+            </td>
+            <th>Email:</th>
+            <td>
+                <input type="text" id="email" onfocusout="CheckEmail()">
+            </td>
+        </tr>
+        <tr>
+            <th>Address:</th>
+            <td>
+                <input type="text" id="add" onfocusout="CheckADD()">
+            </td>
+            <th>Customer Card:</th>
+            <td>
+                <select id="card">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Amount:</th>
+            <td>
+                <input type="number" id="people" onfocusout="CheckAmount()">
+            </td>
+            <th>RentDay:</th>
+            <td>
+                <input type="number" id="rent" onfocusout="CheckRent()">
+            </td>
+        </tr>
+        <tr>
+            <th>Room:</th>
+            <td>
+                <select id="room">
+                    <option>Villa</option>
+                    <option>House</option>
+                    <option>Room</option>
+                </select>
+            </td>
+            <th>Address Room:</th>
+            <td>
+                <select id="level">
+                    <option>Hải Phòng</option>
+                    <option>Đà nẵng</option>
+                    <option>Huê</option>
+                    <option>Quảng Nam</option>
+                </select>
+            </td>
+        </tr>
+    </table><br>
+    <input type="button" value="Submit" onclick="close1()" style="margin-left: 20%">
+</div>
+<script>
+    let i;
+
+
+    function close1() {
+        let tempName = " ";
+        let input = document.getElementById("name").value;
+        let inputName = input.trim().toLowerCase();
+        console.log(inputName);
+        for (let i = 0; i < inputName.length; i++) {
+            if (inputName.charAt(i) === " " && inputName.charAt(i + 1) === " ") {
+                continue;
+            }
+            if (i === 0 || inputName.charAt(i - 1) === " ") {
+                tempName += inputName.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName += inputName.charAt(i)
+        }
+        input = tempName.trim();
+        document.getElementById("name").value = input;
+        let tempAdr = " ";
+        let input1 = document.getElementById("add").value;
+        let inputAdr = input1.trim().toLowerCase();
+        console.log(inputName);
+        for (let i = 0; i < inputAdr.length; i++) {
+            if (inputAdr.charAt(i) === " " && inputAdr.charAt(i + 1) === " ") {
+                continue;
+            }
+            if (i === 0 || inputAdr.charAt(i - 1) === " ") {
+                tempAdr += inputAdr.charAt(i).toUpperCase();
+                continue;
+            }
+            tempAdr += inputAdr.charAt(i)
+        }
+        input1 = tempAdr.trim();
+        document.getElementById("add").value = input1;
+    }
+    function CheckEmail() {
+        let a = document.getElementById('email').value;
+        let b = a.indexOf("@");
+        let c = a.lastIndexOf(".");
+        if (b < 3 || c < (b + 3) || (c + 2) >= a.length) {
+            alert('gmail phải có dạng abc@abc.abc');
+            document.getElementById('email').value = '';
+        }
+    }
+
+    function CheckADD() {
+    }
+
+    function CheckID() {
+        let a = document.getElementById('cmnd').value;
+        let b = parseInt(a);
+        if (b - a != 0) {
+            alert("chứng minh nhân dân phải là số nguyên");
+            document.getElementById('cmnd').value = ' '
+        }
+        let check = false;
+        if (b < 10000000 || b > 99999999) {
+            alert("chứng minh nhân dân phải có tám chữ số");
+            check = false;
+            document.getElementById('cmnd').value = '';
+        }
+    }
+
+    function checkall2(id) {
+        let a = document.getElementById(id).value;
+        if (a < 0 || (Math.floor(a) - a) !== 0) {
+            alert('sai định dạng');
+            document.getElementById(id).value = '';
+        }
+    }
+
+    function CheckRent() {
+        checkall2('rent')
+    }
+
+    function CheckAmount() {
+        checkall2('people')
+    }
+</script>
+</body>
+</html>
