@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Hình Tròn</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        getRadius() {
+            return this.radius
+        }
+
+        getArea() {
+            let S = Math.PI * this.radius * this.radius;
+            return S
+        }
+    }
+
+    let circle = new Circle(parseInt(prompt("hãy nhập bán kính hình tròn")));
+    circle.getRadius();
+    let s = circle.getArea();
+    alert("diện tích hình tròn là : " + s)
+</script>
+</body>
+</html>
