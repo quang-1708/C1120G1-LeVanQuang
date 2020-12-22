@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        checkAppe(apple) {
+            return apple.isEmpty(apple);
+        }
+
+        eat(apple) {
+            if (this.checkAppe(apple) <= 0) {
+                alert(" hết táo")
+            } else {
+                this.weight++;
+            }
+        }
+    }
+
+    let apple = new Apple(10);
+
+    let Eva = new Human("Eva", "female", 45);
+    Eva.getName();
+    Eva.getGender();
+    Eva.getWeight();
+    let Adam = new Human("Adam", "male", 60);
+    Adam .getName();
+    Adam .getGender();
+    Adam .getWeight();
+    for (let i = 0; i < 10; i++) {
+        if (Eva.checkAppe(apple)) {
+            Adam.eat(apple);
+            apple.decrease();
+            Eva.eat(apple);
+            apple.decrease();
+            alert("Eva tăng lên: " + Eva.weight);
+            alert("Adam tăng lên: " + Adam.weight)
+        }
+    }
+    alert("hết táo")
+
+</script>
+</body>
+</html>

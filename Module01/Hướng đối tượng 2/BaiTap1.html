@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đơn giản - di chuyển đối tượng</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class Hero {
+        constructor(image, top, left, size, speed) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speed = speed;
+            this._direction = "right";
+        }
+
+        getImage() {
+            return this.image
+        }
+
+        getTop() {
+            return this.top
+        }
+
+        getLeft() {
+            return this.left
+        }
+
+        getSize() {
+            return this.size
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        getHeroElement() {
+            return '<img width="' + this.size + '"' + ' height="' + this.size + '"' + ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px; position:absolute;" />';
+        }
+
+        getmoveRight() {
+            this.left += this.speed;
+            return this.left
+        }
+
+        getmoveDown() {
+            this.top += this.speed;
+            console.log('ok: ' + this.left);
+        }
+
+        getmoveLeft() {
+            this.left -= this.speed;
+            console.log('ok: ' + this.left);
+        }
+
+        getmoveup() {
+            this.top -= this.speed;
+            console.log('ok: ' + this.left);
+        }
+
+        setDirection(direction) {
+            this._direction = direction;
+        }
+
+
+        getDirection() {
+            return this._direction;
+        }
+
+        move() {
+            switch (this._direction) {
+                case "right":
+                    this.getmoveRight();
+                    break;
+                case "left":
+                    this.getmoveLeft();
+                    break;
+                case "top":
+                    this.getmoveup();
+                    break;
+                case "down":
+                    this.getmoveDown();
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    let hero = new Hero('https://github.com/codegym-vn/objects/blob/master/pikachu.png?raw=true', 20, 20, 200, 80);
+    hero.getImage();
+    hero.getLeft();
+    hero.getTop();
+    hero.getSize();
+    hero.getHeroElement();
+
+    function start() {
+        hero.move();
+        if (hero.getDirection()==="right"&& hero.left >= window.innerWidth - hero.size) {
+            hero.setDirection("down");
+        } else if (hero.getDirection()==="down"&& hero.top >= window.innerHeight - hero.size) {
+            hero.setDirection("left");
+        } else if (hero.getDirection()==="left"&& hero.left <= 0) {
+            hero.setDirection("top");
+        } else if (hero.getDirection()==="top"&& hero.top <= 0) {
+            hero.setDirection("right");
+        }
+
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</body>
+</html>

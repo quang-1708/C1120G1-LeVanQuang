@@ -113,7 +113,7 @@
 
         OnOff() {
             let a = document.getElementById(this.display);
-            if (a.disabled == false) {
+            if (a.disabled === false) {
                 a.disabled = true;
             } else {
                 a.disabled = false;
@@ -177,7 +177,7 @@
     function charging1() {
         if (Nokia.battery < 100) {
             Nokia.charge();
-        } else if (Nokia.battery = 100) {
+        } else if (Nokia.battery === 100) {
             alert('Pin đầy');
         } else {
             Nokia.setbattery();
