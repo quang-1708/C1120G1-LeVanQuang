@@ -20,7 +20,7 @@
 
 </table>
 <script>
-    let arrListCustomers = [['Lê Văn Quang','0348267','17/08/1993','maybi@gmail.com','singapore','gold','4','4','house','vip']];
+    let arrListCustomers = [['Lê Văn Quang','0348267','17/08/1993','levanquang@gmail.com','singapore','gold','4','4','house','vip']];
     let customer = [];
     let i;
     let j;
@@ -84,7 +84,7 @@
         customer.push(level);
         arrListCustomers.push(customer);
         customer = [];
-        menu();
+        menu()
     }
     function displayCustomers() {
         let e = '<tr>' + '<th>STT</th>' + '<th>Customer Name</th>' + '<th>Customer ID</th>' +
@@ -133,10 +133,10 @@
                 editCustomer();
         }
     }
-    function edit(data1,data2) {
+    function edit(x,y) {
         let edited = prompt('nhập chỉnh sửa');
-        arrListCustomers[data1].splice(data2,1,edited);
-        document.getElementById('sun').innerHTML = '';
+        arrListCustomers[x].splice(y,1,edited);
+        // document.getElementById('sun').innerHTML = '';
         displayCustomers();
     }
     function deleteCustomer() {
@@ -146,7 +146,7 @@
             deleteCustomer();
         }
         arrListCustomers.splice((a-1),1);
-        document.getElementById('sun').innerHTML = '';
+        // document.getElementById('sun').innerHTML = '';
         displayCustomers();
     }
 </script>
