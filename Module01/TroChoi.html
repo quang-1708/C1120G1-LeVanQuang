@@ -222,7 +222,7 @@
         customer = new Customer(name.value,cmnd.value,birth.value,email.value,address.value,card.value,amount.value,rentday.value,room.value,discount.value);
         if (reset === -1) {
             listCustomers.push(customer);
-            add2();
+            displayCustomers();
         } else {
             listCustomers[reset] = customer;
             document.getElementById('quang').value = 'Add';
@@ -230,6 +230,22 @@
             reset = -1;
         }
         document.getElementById('reset').reset();
+    }
+    function  displayCustomers() {
+        b.innerHTML += "<tr>" + "<td>" + (listCustomers.length) + "</td>" +
+            "<td>" + customer.getName()+ "</td>" +
+            "<td>" + customer.getCMND() + "</td>" +
+            "<td>" + customer.getEmail() + "</td>" +
+            "<td>" + customer.getBirth() + "</td>" +
+            "<td>" + customer.getAddress() + "</td>" +
+            "<td>" + customer.getCard() + "</td>" +
+            "<td>" + customer.getAmount() + "</td>" +
+            "<td>" + customer.getRentday() + "</td>" +
+            "<td>" + customer.getRoom() + "</td>" +
+            "<td>" + customer.getDiscount() + "</td>" +
+            "<td>" + "<input type='button' value='Pay' onclick='pay("+(listCustomers.length - 1)+")'>" + "</td>" +
+            "<td>" + "<input type='button' value='Edit' onclick='edit("+(listCustomers.length - 1)+")'>" + "</td>" +
+            "<td>" + "<input type='button' value='Delete' onclick='deletea("+(listCustomers.length - 1)+")'>" + "</td>" + "</tr>";
     }
     function update() {
         b.innerHTML= '';
@@ -250,22 +266,6 @@
                 "<td>" + "<input type='button' value='Edit' onclick='edit("+(i)+")'>" + "</td>" +
                 "<td>" + "<input type='button' value='Delete' onclick='deletea("+(i)+")'>" + "</td>" + "</tr>";
         }
-    }
-    function add2() {
-        b.innerHTML += "<tr>" + "<td>" + (listCustomers.length) + "</td>" +
-            "<td>" + customer.getName()+ "</td>" +
-            "<td>" + customer.getCMND() + "</td>" +
-            "<td>" + customer.getEmail() + "</td>" +
-            "<td>" + customer.getBirth() + "</td>" +
-            "<td>" + customer.getAddress() + "</td>" +
-            "<td>" + customer.getCard() + "</td>" +
-            "<td>" + customer.getAmount() + "</td>" +
-            "<td>" + customer.getRentday() + "</td>" +
-            "<td>" + customer.getRoom() + "</td>" +
-            "<td>" + customer.getDiscount() + "</td>" +
-            "<td>" + "<input type='button' value='Pay' onclick='pay("+(listCustomers.length - 1)+")'>" + "</td>" +
-            "<td>" + "<input type='button' value='Edit' onclick='edit("+(listCustomers.length - 1)+")'>" + "</td>" +
-            "<td>" + "<input type='button' value='Delete' onclick='deletea("+(listCustomers.length - 1)+")'>" + "</td>" + "</tr>";
     }
     function edit(data) {
         reset = data;
@@ -344,9 +344,6 @@
             alert('gmail phải có dạng abc@abc.abc');
             document.getElementById('email').value = '';
         }
-    }
-    function invisible() {
-
     }
     let a = true;
     function CustomerData() {

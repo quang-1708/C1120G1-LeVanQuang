@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đề thi 2</title>
+</head>
+<body>
+<script>
+    function kiemTraDX(XYZ) {
+        for (let i = 0; i < XYZ.length; i++) {
+            for (let j = XYZ.length - 1; j <= XYZ.length-1-i; j--) {
+                if (XYZ[i] === XYZ[j]) {
+                    alert(XYZ + " ĐỐI XỨNG");
+                    break;
+                } else {
+                    alert(XYZ + " KHÔNG ĐỐI XỨNG");
+                    break;
+                }
+            }
+        }
+    }
+    kiemTraDX(prompt("nhập chuỗi cần kiểm tra"))
+</script>
+</body>
+</html>

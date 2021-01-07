@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đề thi số 4</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>MÃ SP
+            <input type="text" id="masp"></td>
+        <td>TÊN SP
+            <input type="text" id="tensp"></td>
+        <td>HÃNG SX
+            <input type="text" id="hangsx"></td>
+        <td>GIÁ
+            <input type="number" id="gia"></td>
+    </tr>
+</table>
+<input type="button" value="Add" onclick="add()" id="quang">
+<table class="text">
+    <thead>
+    <tr>
+        <th>MÃ SP</th>
+        <th>TÊN SP</th>
+        <th>HÃNG SX</th>
+        <th>GIÁ</th>
+    </tr>
+    </thead>
+    <tbody id="sun"></tbody>
+</table>
+<script>
+    class sanPham {
+        constructor(maSP, tenSP, hangSX, giaSP) {
+            this.maSP = maSP;
+            this.tenSP = tenSP;
+            this.hangSX = hangSX;
+            this.giaSP = giaSP
+        }
+
+        getMaSP() {
+            return this.maSP
+        }
+
+        setMaSP(maSP) {
+            this.maSP = maSP
+        }
+
+        getTenSP() {
+            return this.tenSP
+        }
+
+        setTenSP(tenSP) {
+            this.tenSP = tenSP
+        }
+
+        getHangSX() {
+            return this.hangSX
+        }
+
+        setHangSX(hangSX) {
+            this.hangSX = hangSX
+        }
+
+        getGiaSP() {
+            return this.giaSP
+        }
+
+        setGiaSP(giaSP) {
+            this.giaSP = giaSP
+        }
+    }
+
+    let maSP = document.getElementById('masp');
+    let tenSP = document.getElementById('tensp');
+    let hangSX = document.getElementById('hangsx');
+    let giaSP = document.getElementById('gia');
+
+    let listSP = [];
+    let b = document.getElementById('sun');
+    let sanpham;
+
+    function add() {
+        sanpham = new sanPham(maSP.value, tenSP.value, hangSX.value, giaSP.value);
+        listSP.push(sanpham);
+        display();
+    }
+
+    function display() {
+        b.innerHTML += "<tr>" +
+            "<td>" + sanpham.getMaSP() + "</td>" +
+            "<td>" + sanpham.getTenSP() + "</td>" +
+            "<td>" + sanpham.getHangSX() + "</td>" +
+            "<td>" + sanpham.getGiaSP() + "</td>" +"</tr>"
+    }
+</script>
+</body>
+</html>

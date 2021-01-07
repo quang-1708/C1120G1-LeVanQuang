@@ -3,71 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <title>quản lý sản phẩm</title>
+    <style>
+        table th {
+            width: 100px
+        }
+
+        .text {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+    </style>
 </head>
 <body>
-<input type="text" id="nhap" placeholder="Ten San pham"> <input type="button" onclick="themMoi()" value="Them san pham">
-<p>So luong</p><span id="soLuong"></span>
-<p id="ketQua"></p>
+<input type="button" onclick="CustomerData();" value="Customer">
+<input type="button" onclick="EmployeeData();" value="Employee">
+<div style="border:1px solid #ddd; padding: 5px; display: none" id="invisible">
+    <legen><b>YOUR BOOKING</b></legen>
+    <form id="reset">
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>
+                    <input type="text" id="name" onfocusout="CheckName()">
+                </td>
+                <th>Số CMND:</th>
+                <td>
+                    <input type="number" id="cmnd" onfocusout="CheckID()">
+                </td>
+            </tr>
+            <tr>
+                <th>Date of Birth:</th>
+                <td>
+                    <input type="date" id="birth">
+                </td>
+                <th>Email:</th>
+                <td>
+                    <input type="text" id="email" onfocusout="CheckEmail()">
+                </td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>
+                    <input type="text" id="add" onfocusout="CheckADD()">
+                </td>
+                <th>Customer Card:</th>
+                <td>
+                    <select id="card">
+                        <option>Diamond</option>
+                        <option>Platinum</option>
+                        <option>Gold</option>
+                        <option>Silver</option>
+                        <option>Member</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Amount:</th>
+                <td>
+                    <input type="number" id="people" onfocusout="CheckAmount()">
+                </td>
+                <th>RentDay:</th>
+                <td>
+                    <input type="number" id="rent" onfocusout="CheckRent()">
+                </td>
+            </tr>
+            <tr>
+                <th>Room:</th>
+                <td>
+                    <select id="room">
+                        <option>Villa</option>
+                        <option>House</option>
+                        <option>Room</option>
+                    </select>
+                </td>
+                <th>Discount:</th>
+                <td>
+                    <input type="number" id="discount" onfocusout="Discount()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <input type="button" value="Add" onclick="add()" id="quang">
+    <hr>
+    <table class="text">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Số CMND</th>
+            <th>Email</th>
+            <th>Ngày Sinh</th>
+            <th>Địa chỉ</th>
+            <th>Card</th>
+            <th>Amount</th>
+            <th>RentDay</th>
+            <th>Room</th>
+            <th>Discount</th>
+            <th>Thanh Toán</th>
+            <td><b>Sửa</b></td>
+            <td><b>Xóa</b></td>
+        </tr>
+        </thead>
+        <tbody id="sun"></tbody>
+    </table>
+</div>
 <script>
-    let danhSachSP = ["Nokia", "SamSung", "Iphone", "LG"];
-    hienThi();
-
-    // hàm hiện thị sản phẩm
-    function hienThi() {
-        let bangChuoi = '<table border="1">\n' +
-            '    <tr>\n' +
-            '        <th>Stt</th>\n' +
-            '        <th>Tên</th>\n' +
-            '        <th>Sửa</th>\n' +
-            '        <th>Xóa</th>\n' +
-            '    </tr>';
-        for (let i = 0; i < danhSachSP.length; i++) {
-            bangChuoi += '<tr>\n' +
-                '        <td>' + (i + 1) + '</td>\n' +
-                '        <td>' + danhSachSP[i] + '</td>\n' +
-                '        <td><input type="button" value="Sửa" onclick="suaTen(' + i + ')"></td>\n' +
-                '        <td><input type="button" value="Xóa" onclick="xoaSanPham(' + i + ')"></td>\n' +
-                '\n' +
-                '    </tr>'
+    class Human {
+        constructor(name, cmnd, birth, email, address) {
+            this.name = name;
+            this.cmnd = cmnd;
+            this.birth = birth;
+            this.email = email;
+            this.address = address;
         }
-        danhSachSP += '</table>';
-        document.getElementById("ketQua").innerHTML = bangChuoi;
-        document.getElementById("soLuong").innerHTML = danhSachSP.length;
     }
 
-    // hàm xoa sản phẩm
-    function xoaSanPham(id) {
-        let xacNhanXoa = confirm(" Ban co muon xoa ten san pham" + danhSachSP[id]);
-        if (xacNhanXoa) {
-            danhSachSP.splice(id, 1);
+    class Customer extends Human {
+        constructor(name, cmnd, birth, email, address, card, amount, rentday, room, discount) {
+            super(name, cmnd, birth, email, address);
+            this.card = card;
+            this.amount = amount;
+            this.rentday = rentday;
+            this.room = room;
+            this.discount = discount;
         }
-        // sau khi xóa phải hiện thị lại
-        hienThi();
+
+        getName() {
+            return this.name;
+        }
+
+        getCMND() {
+            return this.cmnd;
+        }
+
+        getBirth() {
+            return this.birth;
+        }
+
+        getCard() {
+            return this.card;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        getAmount() {
+            return this.amount;
+        }
+
+        getRentday() {
+            return this.rentday;
+        }
+
+        getRoom() {
+            return this.room;
+        }
+
+        getDiscount() {
+            return this.discount
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setCMND(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        setBirth(birth) {
+            this.birth = birth;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+
+        setCard(card) {
+            this.card = card;
+        }
+
+        setAmount(amount) {
+            this.amount = amount;
+        }
+
+        setRentDay(rentday) {
+            this.rentday = rentday;
+        }
+
+        setRoom(room) {
+            this.room = room;
+        }
+
+        setDiscount(discount) {
+            this.discount = discount
+        }
+
+        pay() {
+            let money = this.getRentday() * (1 - this.getDiscount() / 100);
+            if (this.getRoom() === 'Villa') {
+                money = money * 500;
+            }
+            if (this.getRoom() === 'House') {
+                money = money * 300;
+            }
+            if (this.getRoom() === 'Room') {
+                money = money * 100;
+            }
+            return money
+        }
     }
 
-    // hàm sửa tên sản phẩm
-    function suaTen(id) {
-        let tenSPMoi = prompt("Nhap ten sp moi");
-        if (tenSPMoi != "" && tenSPMoi != null) {
-            danhSachSP[id] = tenSPMoi
+    let name = document.getElementById('name');
+    let cmnd = document.getElementById('cmnd');
+    let address = document.getElementById('add');
+    let card = document.getElementById('card');
+    let amount = document.getElementById('people');
+    let rentday = document.getElementById('rent');
+    let room = document.getElementById('room');
+    let discount = document.getElementById('discount');
+    let birth = document.getElementById('birth');
+    let email = document.getElementById('email');
+    let b = document.getElementById('sun');
+    let listCustomers = [];
+    let i = 0;
+    let customer;
+
+    function add() {
+        customer = new Customer(name.value, cmnd.value, birth.value, email.value, address.value, card.value, amount.value, rentday.value, room.value, discount.value);
+        //     if (reset === -1) {
+        listCustomers.push(customer);
+        displayCustomers();
+        //     } else {
+        //         listCustomers[reset] = customer;
+        //         document.getElementById('quang').value = 'Add';
+        //         update();
+        //         reset = -1;
+        //     }
+        //     document.getElementById('reset').reset();
+    }
+
+    function displayCustomers() {
+        b.innerHTML += "<tr>" + "<td>" + (listCustomers.length) + "</td>" +
+            "<td>" + customer.getName() + "</td>" +
+            "<td>" + customer.getCMND() + "</td>" +
+            "<td>" + customer.getEmail() + "</td>" +
+            "<td>" + customer.getBirth() + "</td>" +
+            "<td>" + customer.getAddress() + "</td>" +
+            "<td>" + customer.getCard() + "</td>" +
+            "<td>" + customer.getAmount() + "</td>" +
+            "<td>" + customer.getRentday() + "</td>" +
+            "<td>" + customer.getRoom() + "</td>" +
+            "<td>" + customer.getDiscount() + "</td>" +
+            "<td>" + "<input type='button' value='Pay' onclick='pay(" + (listCustomers.length - 1) + ")'>" + "</td>" +
+            "<td>" + "<input type='button' value='Edit' onclick='edit(" + (listCustomers.length - 1) + ")'>" + "</td>" +
+            "<td>" + "<input type='button' value='Delete' onclick='deletea(" + (listCustomers.length - 1) + ")'>" + "</td>" + "</tr>";
+    }
+
+    // function update() {
+    //     b.innerHTML= '';
+    //     for (i = 0; i < listCustomers.length; i++) {
+    //         let customer = listCustomers[i];
+    //         b.innerHTML += "<tr>" + "<td>" + (i + 1) + "</td>" +
+    //             "<td>" + customer.getName()+ "</td>" +
+    //             "<td>" + customer.getCMND() + "</td>" +
+    //             "<td>" + customer.getEmail() + "</td>" +
+    //             "<td>" + customer.getBirth() + "</td>" +
+    //             "<td>" + customer.getAddress() + "</td>" +
+    //             "<td>" + customer.getCard() + "</td>" +
+    //             "<td>" + customer.getAmount() + "</td>" +
+    //             "<td>" + customer.getRentday() + "</td>" +
+    //             "<td>" + customer.getRoom() + "</td>" +
+    //             "<td>" + customer.getDiscount() + "</td>" +
+    //             "<td>" + "<input type='button' value='Pay' onclick='pay("+(i)+")'>" + "</td>" +
+    //             "<td>" + "<input type='button' value='Edit' onclick='edit("+(i)+")'>" + "</td>" +
+    //             "<td>" + "<input type='button' value='Delete' onclick='deletea("+(i)+")'>" + "</td>" + "</tr>";
+    //     }
+    // }
+    // // function edit(data) {
+    // //     reset = data;
+    // //     let customer = listCustomers[data];
+    // //     name.value = customer.getName();
+    // //     cmnd.value = customer.getCMND();
+    // //     address.value = customer.getAddress();
+    // //     card.value = customer.getCard();
+    // //     amount.value = customer.getAmount();
+    // //     email.value = customer.getEmail();
+    // //     rentday.value = customer.getRentday();
+    // //     room.value = customer.getRoom();
+    // //     discount.value = customer.getDiscount();
+    // //     birth.value = customer.getBirth();
+    // //     // document.getElementById('quang').value = 'Update';
+    // //     update()
+    // // }
+    // function deletea(datadelete) {
+    //     listCustomers.splice(datadelete, 1);
+    //     update()
+    // }
+    //
+    // function pay(stt) {
+    //     let customer = listCustomers[stt];
+    //     alert(customer.name + ' phải trả ' + customer.pay() + ' đồng')
+    // }
+    //
+    // // check
+    // function checkall(id) {
+    //     let a = document.getElementById(id).value;
+    //     let b = a[0].toUpperCase();
+    //     for (i = 1; i < a.length; i++) {
+    //         if (a[i - 1] == ' ' && a[i] == ' ') {
+    //             continue;
+    //         } else if (a[i - 1] == ' ' && a[i] != ' ') {
+    //             b += a[i].toUpperCase();
+    //         } else if (a[i - 1] != '' && a[i] != '') {
+    //             b += a[i].toLowerCase();
+    //         }
+    //     }
+    //     document.getElementById(id).value = b;
+    // }
+    //
+    // function checkall2(id) {
+    //     let a = document.getElementById(id).value;
+    //     if (a < 0 || (Math.floor(a) - a) != 0) {
+    //         alert('sai định dạng');
+    //         document.getElementById(id).value = '';
+    //     }
+    // }
+    //
+    // function Discount() {
+    //     checkall('discount')
+    // }
+    //
+    // function CheckName() {
+    //     checkall('name');
+    // }
+    //
+    // function CheckADD() {
+    //     checkall('add');
+    // }
+    //
+    // function CheckID() {
+    //     let a = document.getElementById('cmnd').value;
+    //     for (i = 0; i < a.length; i++) {
+    //         if (a[i] < 0 || Math.floor(a[i]) - a[i] != 0) {
+    //             alert('sai định dạng');
+    //             document.getElementById('cmnd').value = '';
+    //         }
+    //     }
+    // }
+    //
+    // function CheckRent() {
+    //     checkall2('rent')
+    // }
+    //
+    // function CheckAmount() {
+    //     checkall2('people')
+    // }
+    //
+    // function CheckEmail() {
+    //     let a = document.getElementById('email').value;
+    //     let b = a.indexOf("@");
+    //     let c = a.lastIndexOf(".");
+    //     if (b < 3 || c < (b + 3) || (c + 2) >= a.length) {
+    //         alert('gmail phải có dạng abc@abc.abc');
+    //         document.getElementById('email').value = '';
+    //     }
+    // }
+
+    let a = true;
+
+    function CustomerData() {
+        let b = document.getElementById('invisible');
+        if (a) {
+            b.style.display = 'block';
+            a = false
         } else {
-            alert(" hay nhap ten sp")
+            b.style.display = 'none';
+            a = true;
         }
-        hienThi();
-    }
-
-    // hàm thêm mới sản phẩm
-    function themMoi() {
-        let tenSP = document.getElementById("nhap").value;
-        if (tenSP !== "") {
-            danhSachSP.push(tenSP);
-        } else {
-            alert(" hay nhap ten san pham")
-        }
-        document.getElementById("nhap").value = "";
-        hienThi();
     }
 </script>
-
 </body>
 </html>
